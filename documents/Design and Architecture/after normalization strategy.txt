@@ -1,0 +1,42 @@
+Yes. Canonicalization and URL normalization are important, but they won't protect the core value of your product.
+
+I'd focus on these 5 areas:
+
+Keep your feed intelligence server-side
+
+Image extraction logic
+Deduplication algorithms
+Feed scoring/ranking
+Reliability metrics
+Content enrichment Never send these rules to the browser.
+
+Build a proprietary enrichment layer
+
+Custom thumbnail recovery
+Feed health scoring
+Content categorization
+Duplicate detection
+Publisher trust scores Competitors can copy a UI. They cannot easily copy years of feed intelligence.
+
+Cache and serve your own processed data
+
+Don't expose raw parser outputs.
+Serve enriched articles from your API.
+Keep intermediate processing hidden.
+
+Protect APIs aggressively
+
+Rate limiting
+API authentication
+Request fingerprinting
+Bot detection
+Abuse monitoring This prevents people from treating your product as a free feed-extraction service.
+
+Create a continuously improving extraction engine
+
+New image patterns
+New feed formats
+Better fallback strategies
+Publisher-specific quirks A competitor can inspect your site today, but they cannot inspect the improvements you'll make every week.
+
+My biggest observation from what you've described: your moat is not the RSS reader UI. It's becoming the system that can reliably say, "If an image exists anywhere, Feedometer will find it." That is difficult to replicate and gets stronger as you process more feeds.

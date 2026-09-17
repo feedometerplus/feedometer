@@ -1,0 +1,80 @@
+name = "feedometer-api"
+main = "workers/feedometer-worker.js"
+compatibility_date = "2024-09-01"
+
+# -------------------------------------------------------------
+# 1. DEVELOPMENT ENVIRONMENT (Default / Local / Dev Cloud)
+# -------------------------------------------------------------
+[vars]
+ENVIRONMENT = "development"
+WORKER_PUBLIC_URL = "http://localhost:8787"
+ADMIN_NOTIFY_EMAIL = "admin@feedometer.com"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "feedometer-db"
+database_id = "b116c5d0-1ad8-4476-a8d3-694cb4eec735"
+
+[[kv_namespaces]]
+binding = "FEEDS_KV"
+id = "99fdc90255f0436993b8b4afa44970b3"
+
+[observability]
+[observability.logs]
+enabled = true
+invocation_logs = true
+persist = true
+
+# -------------------------------------------------------------
+# 2. STAGING ENVIRONMENT (Pre-Production Validation)
+# -------------------------------------------------------------
+[env.staging]
+name = "feedometer-api-stage"
+[env.staging.vars]
+ENVIRONMENT = "staging"
+WORKER_PUBLIC_URL = "https://feedometer-api-stage.ancient-smoke-3af9.workers.dev"
+ADMIN_NOTIFY_EMAIL = "admin@feedometer.com"
+
+[[env.staging.d1_databases]]
+binding = "DB"
+database_name = "feedometer-stage"
+database_id = "c5e34b38-cd10-4580-a2e5-cb157319a18d"
+
+[[env.staging.kv_namespaces]]
+binding = "FEEDS_KV"
+id = "b8a4c545335e4d35b295f82fbfa292e9"
+
+[env.staging.observability]
+[env.staging.observability.logs]
+enabled = true
+invocation_logs = true
+persist = true
+
+# -------------------------------------------------------------
+# 3. PRODUCTION ENVIRONMENT (Live Master - Real Users)
+# -------------------------------------------------------------
+[env.production]
+name = "feedometer-api"
+[env.production.vars]
+ENVIRONMENT = "production"
+WORKER_PUBLIC_URL = "https://feedometer-api.ancient-smoke-3af9.workers.dev"
+ADMIN_NOTIFY_EMAIL = "admin@feedometer.com"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "feedometer-db"
+database_id = "b116c5d0-1ad8-4476-a8d3-694cb4eec735"
+
+[[env.production.kv_namespaces]]
+binding = "FEEDS_KV"
+id = "99fdc90255f0436993b8b4afa44970b3"
+
+[env.production.observability]
+[env.production.observability.logs]
+enabled = true
+invocation_logs = true
+persist = true
+
+# Production crons: warm-cache every 4 hours; waitlist KV→D1 at 13:00 UTC (7:00 PM IST)
+[env.production.triggers]
+crons = ["0 */4 * * *", "0 13 * * *"]
