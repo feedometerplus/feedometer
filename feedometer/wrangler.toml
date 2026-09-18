@@ -1,0 +1,26 @@
+name = "feedometer-api"
+main = "workers/feedometer-worker.js"
+compatibility_date = "2024-09-01"
+
+[vars]
+ENVIRONMENT = "production"
+ADMIN_NOTIFY_EMAIL = "admin@feedometer.com"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "feedometer-db"
+database_id = "e25f4a17-8f70-40ea-95dd-3a5d22a60be0"
+
+[[kv_namespaces]]
+binding = "FEEDS_KV"
+id = "b8a4c545335e4d35b295f82fbfa292e9"
+
+[observability]
+[observability.logs]
+enabled = true
+invocation_logs = true
+persist = true
+
+# Scheduled crons: warm-cache every 4 hours; waitlist KV→D1 sync daily at 13:00 UTC (7:00 PM IST)
+[triggers]
+crons = ["0 */4 * * *", "0 13 * * *"]
