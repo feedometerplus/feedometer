@@ -1,1 +1,0 @@
-This folder contains the built output assets for the worker "feedometer-api" generated at 2026-09-19T12:43:22.191Z.
