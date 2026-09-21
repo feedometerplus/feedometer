@@ -1,0 +1,171 @@
+Core RSS Reader Features
+Feed Subscription Management
+Feed Discovery
+Feed Import/Export (OPML)
+Folder-Based Feed Organization
+Nested Folder Management
+Multi-Source Aggregation
+Custom Feed Submission
+Feed Health Monitoring
+Publisher Directory
+Popular Sources Explorer
+Content Consumption Features
+Unified Reading Feed
+Source-Centric Reading
+Reading Mode Preferences
+Read History
+Save For Later
+Starring System
+Recently Read
+Unread Tracking
+Reading Progress Tracking
+Content Deduplication
+Search Features
+Global Search
+Full-Text Article Search
+Search By Title
+Search By Author
+Search By Publisher
+Search By Category
+Search By Language
+Search By Date Range
+Advanced Search Filters
+Boolean Search
+Exact Phrase Search
+Exclusion Search
+Power Search Syntax
+Search Suggestions
+Search Autocomplete
+Zero-Result Detection
+Search Analytics
+Search Explainability
+Search Result Ranking
+Hybrid BM25 Ranking
+Discovery Features
+Trending Searches
+Trending Topics
+Trending Sources
+Trending Authors
+Related Articles
+Related Topics
+Popular Stories
+Recommended Sources
+Topic Exploration
+Emerging Topic Detection
+Intelligence Features
+Company Intelligence Hubs
+Topic Intelligence Hubs
+Entity Monitoring
+Mention Tracking
+Mention Velocity Analysis
+Story Timeline Visualization
+Top Voices Detection
+Publisher Influence Tracking
+Authority Scoring
+Real-Time Trend Detection
+Alerts & Monitoring
+Keyword Alerts
+Company Monitoring
+Topic Monitoring
+Saved Searches
+Search Watchlists
+Breaking News Alerts
+Feed Failure Alerts
+Custom Alert Rules
+Email Notifications
+In-App Notifications
+Analytics & Insights
+Article Engagement Analytics
+User Reading Analytics
+Publisher Performance Analytics
+Source Growth Analytics
+Search Performance Analytics
+Click-Through Rate Analytics
+Content Popularity Rankings
+User Activity Dashboards
+Engagement Heatmaps
+Search Trend Reports
+Explainability & Trust
+Why This Result?
+Ranking Transparency
+Authority Badges
+Verified Source Labels
+Engagement Indicators
+Content Freshness Indicators
+Search Match Explanations
+Source Trust Scores
+Personalization Features
+Personalized Feed
+Personalized Search Ranking
+Preferred Sources
+Reading Preferences
+Followed Topics
+Followed Companies
+Followed Authors
+Custom Dashboards
+Smart Recommendations
+Personalized Alerts
+Knowledge Graph & Entity Features
+Entity Extraction
+Company Pages
+Topic Pages
+Author Pages
+Entity Relationships
+Company News Timeline
+Topic Trend Analysis
+Cross-Article Entity Linking
+Entity Search
+Entity Watchlists
+Story Clustering Features
+Duplicate Story Detection
+Story Clustering
+Narrative Tracking
+Multi-Source Story Aggregation
+Canonical Story View
+Story Evolution Timeline
+Breaking Story Tracking
+Cluster Popularity Ranking
+Semantic Search (Phase 3)
+Vector Search
+Semantic Search
+Query Intent Expansion
+Similar Article Discovery
+AI-Powered Recommendations
+Contextual Search
+Natural Language Search
+Intent-Based Ranking
+User Productivity Features
+Saved Searches Workspace
+Research Collections
+Monitoring Dashboards
+Topic Workspaces
+News Briefing Views
+Custom Reading Lists
+Quick Filters
+Smart Bookmarks
+Search History
+Activity Timeline
+Premium/Monetizable Features
+Unlimited Alerts
+Advanced Monitoring Dashboards
+Competitive Intelligence Tracking
+Industry Monitoring
+Executive Briefings
+Enterprise Search
+Team Workspaces
+Shared Watchlists
+API Access
+Advanced Analytics Suite
+Future Enterprise Features
+Team Collaboration
+Shared Folders
+Shared Saved Searches
+Organization-Wide Watchlists
+Knowledge Base Generation
+Research Report Builder
+Competitive Intelligence Portal
+Market Monitoring Center
+Brand Monitoring Platform
+Media Intelligence Suite
+
+Net result: Your current schema + the proposed search domain can realistically support 100+ user-facing features without requiring a major schema redesign later.
