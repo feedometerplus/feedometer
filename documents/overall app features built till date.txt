@@ -1,0 +1,97 @@
+Find Feeds - actively finds feeds based on one or more keywords
+RSS Reader - can read all types of feeds
+RSS Builder - can turn various things into RSS 2 . 0 
+Widget Studio - output of feeds can be seen in various differnte modes, can dynamically change several paramaters such as color schemes, fonts output type such as news wall, imageboard, ticker etc...and gives embed code also... in all desktop, tablet and mobile version to take and plug into websites and other places....
+great search tool with various features... with plenty of search capabilities... 
+
+Users can follow feeds
+Users can unfollow feeds
+Users can Read later option on
+Users can view analytics
+Users can create watch lists (personal folders hierarchical folders and save feeds in respective folders) and view whenever they want wihtou having to search for anything
+Users has the Trending page.. which shows all the articles from all the subscribed feeds on a page... User can filter
+
+A few things I'd focus on before go-live:
+
+First-run onboarding
+Empty states
+Search experience
+Following/unfollowing workflows
+Folder/watchlist organization
+Widget publishing flow
+Pricing and plan structure
+Performance under large feed counts
+Mobile responsiveness
+Naming consistency across the product
+
+
+
+
+Discover
+  Trending
+  Find Feeds
+  Search
+
+Read
+  RSS Reader
+  Following
+  Read Later
+
+Build
+  Add Source
+  RSS Builder
+
+Publish
+  Widget Studio
+  Embeds
+
+Analyze
+  Analytics
+  Insights
+
+Organize
+  Watchlists
+  Collections
+  Folders
+
+
+discovery
+2
+intelligence
+3
+tracking
+4
+organization
+5
+analytics
+6
+visualization
+7
+publishing
+
+
+Discover information
+2
+↓
+3
+Create feeds
+4
+↓
+5
+Follow feeds
+6
+↓
+7
+Organize feeds
+8
+↓
+9
+Analyze feeds
+10
+↓
+11
+Visualize feeds
+12
+↓
+13
+Publish feeds

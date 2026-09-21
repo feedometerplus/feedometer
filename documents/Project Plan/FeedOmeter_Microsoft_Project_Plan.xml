@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project xmlns="http://schemas.microsoft.com/project">
+  <Name>FeedOmeter 2.1 Master 7-Phase Engineering Project Plan</Name>
+  <Title>FeedOmeter 2.1 Master Project Plan</Title>
+  <Author>FeedOmeter Architecture Team</Author>
+  <CreationDate>2026-09-18T08:00:00</CreationDate>
+  <LastSaved>2026-09-18T13:45:00</LastSaved>
+  <Tasks>
+    <Task>
+      <UID>1</UID>
+      <ID>1</ID>
+      <Name>Phase 1: RSS Feed Reader & Infrastructure Foundation</Name>
+      <Type>1</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <PercentComplete>100</PercentComplete>
+      <Summary>1</Summary>
+    </Task>
+    <Task>
+      <UID>2</UID>
+      <ID>2</ID>
+      <Name>[P1-01] Domain & Cloud Infrastructure Setup</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>100</PercentComplete>
+      <Priority>800</Priority>
+      <Summary>0</Summary>
+      <Notes>Registered feedometer.com on Hostinger, configured Cloudflare DNS, SSL/TLS certificates, custom apex/www domain routing, and Cloudflare Pages hosting.</Notes>
+    </Task>
+    <Task>
+      <UID>3</UID>
+      <ID>3</ID>
+      <Name>[P1-02] GitHub Repository & Production Build Pipeline</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>100</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Initialized GitHub repository, configured branch workflows, and implemented automated production minification engine (build.js) achieving -38% payload reduction.</Notes>
+    </Task>
+    <Task>
+      <UID>4</UID>
+      <ID>4</ID>
+      <Name>[P1-03] Cloudflare D1 Database & KV Schema Architecture</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>100</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Created feedometer-db D1 database, defined publishers, feeds, and notify_signups tables with unique indexes, and bound FEEDS_KV for multi-tier global caching.</Notes>
+    </Task>
+    <Task>
+      <UID>5</UID>
+      <ID>5</ID>
+      <Name>[P1-04] Cloudflare Edge Worker API & Routing Engine</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT60H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>100</PercentComplete>
+      <Priority>800</Priority>
+      <Summary>0</Summary>
+      <Notes>Engineered stateless feedometer-worker.js with sub-10ms Edge Cache API (caches.default), KV fallback, /api/view, /api/catalog, /api/og, and /api/waitlist routes.</Notes>
+    </Task>
+    <Task>
+      <UID>6</UID>
+      <ID>6</ID>
+      <Name>[P1-05] Universal XML Parsing & Layer A Image Extraction</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>100</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Built universal namespace-agnostic RSS 2.0 / Atom 1.0 parser with deep extraction for Media RSS (<media:content>, <media:thumbnail>), iTunes enclosures, and inline <img srcset>.</Notes>
+    </Task>
+    <Task>
+      <UID>7</UID>
+      <ID>7</ID>
+      <Name>[P1-06] URL Canonicalization, Deduplication & Safety Moderation</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>100</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Implemented tracking parameter stripping (utm_*, fbclid), canonical article URL generation, atomic title-hash deduplication, and automated hate speech/extremism content filter.</Notes>
+    </Task>
+    <Task>
+      <UID>8</UID>
+      <ID>8</ID>
+      <Name>[P1-07] Server-Side Async Hero Image Enrichment & KV Caching</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>100</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Added non-blocking ctx.waitUntil OpenGraph hero image extraction with per-article KV caching (og:<url>, 7-day TTL), eliminating all client-side scraping loops.</Notes>
+    </Task>
+    <Task>
+      <UID>9</UID>
+      <ID>9</ID>
+      <Name>[P1-08] Dynamic 25-Outlet Publisher Directory & D1 Seeding</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>100</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Seeded 25 curated news publishers and sub-topics into D1 (seed_publishers.sql) with edge-cached /api/catalog route, stripping all hardcoded catalog JSON from frontend.</Notes>
+    </Task>
+    <Task>
+      <UID>10</UID>
+      <ID>10</ID>
+      <Name>[P1-09] Pure Presentation Frontend & Master Design System</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>100</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Refactored feedometer-viewer.js to pure presentation (fetch -> render), declared master :root design tokens, standardized typography H1-H6, and unified .btn / .badge schemas.</Notes>
+    </Task>
+    <Task>
+      <UID>11</UID>
+      <ID>11</ID>
+      <Name>Phase 2: Personal Reader Fundamentals</Name>
+      <Type>1</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <PercentComplete>15</PercentComplete>
+      <Summary>1</Summary>
+    </Task>
+    <Task>
+      <UID>12</UID>
+      <ID>12</ID>
+      <Name>[P2-01] Authentication Foundation</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>800</Priority>
+      <Summary>0</Summary>
+      <Notes>Implement D1 user and session tables (users, sessions). Build password hashing (salted SHA-256), bearer token generation, session verification, POST /api/auth/register, POST /api/auth/login, POST /api/auth/logout, and GET /api/me to establish authenticated owner accounts from Day 1.</Notes>
+    </Task>
+    <Task>
+      <UID>13</UID>
+      <ID>13</ID>
+      <Name>[P2-02] Stream Engine (The Heart)</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT60H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>800</Priority>
+      <Summary>0</Summary>
+      <Notes>Build the core Stream Engine (/api/stream). Delivers multi-feed fusion (10 feeds -> 1 unified stream), universal JSON normalization ({id, title, summary, link, published, source, image}), cross-feed deduplication, and sub-100ms chronological sorting backed by multi-tier caching.</Notes>
+    </Task>
+    <Task>
+      <UID>14</UID>
+      <ID>14</ID>
+      <Name>[P2-03] User Feed Management & Folders</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>800</Priority>
+      <Summary>0</Summary>
+      <Notes>Implement D1-backed user subscriptions and folder hierarchy (user_sources, folders). Expose POST /api/follow, POST /api/unfollow, POST /api/folders/create, POST /api/folders/update, GET /api/my-feeds, and GET /api/my-folders with strict token authentication.</Notes>
+    </Task>
+    <Task>
+      <UID>15</UID>
+      <ID>15</ID>
+      <Name>[P2-04] Feed Discovery Engine</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Build keyword and catalog search engine (/api/discover?q=...). Queries D1 catalog with verified badges, presents category starter pills (News, Tech, Finance, AI, EV), and returns suggested feeds for rapid user acquisition.</Notes>
+    </Task>
+    <Task>
+      <UID>16</UID>
+      <ID>16</ID>
+      <Name>[P2-05] Universal Website Feed Builder & Newsletter Resolver</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Build universal website-to-feed ingestion tool (/api/builder). Probes input URLs, inspects <link rel="alternate"> headers, auto-resolves creator platforms (Substack, Beehiiv, Ghost, Medium), and provides fallback Edge HTML article extraction with live preview.</Notes>
+    </Task>
+    <Task>
+      <UID>17</UID>
+      <ID>17</ID>
+      <Name>[P2-06] Personal Reader Actions (Starred, Read Later, History)</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Implement D1 tables for starred_articles, saved_articles, and read_history. Provide 1-click Star, Save Later, and Read/Unread tracking with endpoints POST /api/star, POST /api/save, GET /api/my-starred, GET /api/my-saved, and POST /api/read-history.</Notes>
+    </Task>
+    <Task>
+      <UID>18</UID>
+      <ID>18</ID>
+      <Name>[P2-07] Thematic Collections Engine</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Build custom thematic collections (collections, collection_sources). Enables users to bundle related feeds into specialized topic collections and generate collection-filtered composite streams (/api/collections/:id/stream).</Notes>
+    </Task>
+    <Task>
+      <UID>19</UID>
+      <ID>19</ID>
+      <Name>Phase 3: Cloud Identity, D1 Persistence & Device Sync</Name>
+      <Type>1</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <PercentComplete>0</PercentComplete>
+      <Summary>1</Summary>
+    </Task>
+    <Task>
+      <UID>20</UID>
+      <ID>20</ID>
+      <Name>[P3-01] Passwordless Magic Link & OAuth Authentication</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Expand auth subsystem to support 1-click Magic Email Login (via Resend/Postmark) and Google/GitHub OAuth integrations with D1 user mapping.</Notes>
+    </Task>
+    <Task>
+      <UID>21</UID>
+      <ID>21</ID>
+      <Name>[P3-02] Bidirectional Cloud Sync Engine (D1 ◄► Local)</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Build automatic background synchronization between client state and Cloudflare D1 database, ensuring instant multi-device continuity and offline resilience.</Notes>
+    </Task>
+    <Task>
+      <UID>22</UID>
+      <ID>22</ID>
+      <Name>[P3-03] User Profile & Persistent Cloud Preferences</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT24H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Store user layout preferences, reading theme (dark/light/sepia), refresh frequencies, and default start pages in D1 user settings.</Notes>
+    </Task>
+    <Task>
+      <UID>23</UID>
+      <ID>23</ID>
+      <Name>[P3-04] Multi-Device Session Management & Live Broadcast</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT24H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Handle secure HTTP-only session cookies and cross-tab BroadcastChannel communication for instant multi-tab status synchronization.</Notes>
+    </Task>
+    <Task>
+      <UID>24</UID>
+      <ID>24</ID>
+      <Name>Phase 4: Search, Curation & Discovery Platform</Name>
+      <Type>1</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <PercentComplete>0</PercentComplete>
+      <Summary>1</Summary>
+    </Task>
+    <Task>
+      <UID>25</UID>
+      <ID>25</ID>
+      <Name>[P4-01] Global Feed Directory & Autodiscovery Search</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Enhance feed search modal with category exploration, popularity rankings from D1, and real-time website URL RSS autodiscovery.</Notes>
+    </Task>
+    <Task>
+      <UID>26</UID>
+      <ID>26</ID>
+      <Name>[P4-02] Saved Searches & Dynamic Smart Feeds</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Allow users to save recurring search queries as dynamic "Smart Feeds" that automatically aggregate matching articles across all subscribed feeds.</Notes>
+    </Task>
+    <Task>
+      <UID>27</UID>
+      <ID>27</ID>
+      <Name>[P4-03] Multi-Dimensional Article Tags & Categories</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Implement custom tag pills on articles with tag filtering, allowing multi-label cross-categorization outside traditional folder hierarchies.</Notes>
+    </Task>
+    <Task>
+      <UID>28</UID>
+      <ID>28</ID>
+      <Name>[P4-04] Public Collections & Shareable Reading Lists</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Generate unique public share links for user-curated feed bundles or article collections with custom branded landing cards.</Notes>
+    </Task>
+    <Task>
+      <UID>29</UID>
+      <ID>29</ID>
+      <Name>[P4-05] Feed Health, Uptime & Latency Diagnostics</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT24H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Provide an automated health monitoring dashboard showing feed response times, HTTP status codes, and last-successful-fetch timestamps.</Notes>
+    </Task>
+    <Task>
+      <UID>30</UID>
+      <ID>30</ID>
+      <Name>Phase 5: SaaS Automation, Alerting & Integrations</Name>
+      <Type>1</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <PercentComplete>0</PercentComplete>
+      <Summary>1</Summary>
+    </Task>
+    <Task>
+      <UID>31</UID>
+      <ID>31</ID>
+      <Name>[P5-01] Edge Rules & Boolean Query Parser Engine</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Build a serverless edge evaluation engine in Cloudflare Worker with full Boolean AST evaluation (AND, OR, NOT, exact quotes, nested parentheses, field targeting title:, source:, author:).</Notes>
+    </Task>
+    <Task>
+      <UID>32</UID>
+      <ID>32</ID>
+      <Name>[P5-02] Notification Dispatcher (Email & Web Push)</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Integrate real-time notification dispatching supporting Web Push API (VAPID) and instant email alerts via transactional mail API.</Notes>
+    </Task>
+    <Task>
+      <UID>33</UID>
+      <ID>33</ID>
+      <Name>[P5-03] Outbound Webhook Dispatcher</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Trigger secure JSON POST webhook payloads to custom HTTP endpoints whenever high-priority keyword or filter rules match incoming articles.</Notes>
+    </Task>
+    <Task>
+      <UID>34</UID>
+      <ID>34</ID>
+      <Name>[P5-04] SaaS Integrations (Slack, Discord, Teams, Zapier)</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Pre-built webhook connectors formatting article rich cards directly into Slack channels, Discord webhooks, Microsoft Teams, and Zapier triggers.</Notes>
+    </Task>
+    <Task>
+      <UID>35</UID>
+      <ID>35</ID>
+      <Name>[P5-05] Newsletter Digest Builder Studio</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>A visual newsletter creator that compiles top starred/curated articles of the week into a responsive HTML email digest.</Notes>
+    </Task>
+    <Task>
+      <UID>36</UID>
+      <ID>36</ID>
+      <Name>Phase 6: Edge AI Intelligence Layer</Name>
+      <Type>1</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <PercentComplete>0</PercentComplete>
+      <Summary>1</Summary>
+    </Task>
+    <Task>
+      <UID>37</UID>
+      <ID>37</ID>
+      <Name>[P6-01] 1-Click Executive AI Article Summaries</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Integrate Cloudflare Workers AI (@cf/meta/llama-3-8b-instruct) to generate concise 2-bullet executive summaries directly inside article cards with KV response caching.</Notes>
+    </Task>
+    <Task>
+      <UID>38</UID>
+      <ID>38</ID>
+      <Name>[P6-02] AI Topic Clustering & Semantic De-duplication</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Use Cloudflare Vectorize / Text Embeddings to cluster breaking news stories across multiple publishers into single aggregated topic streams.</Notes>
+    </Task>
+    <Task>
+      <UID>39</UID>
+      <ID>39</ID>
+      <Name>[P6-03] Brand, Competitor & Executive Tracker</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Automated entity extraction and sentiment analysis tracking specific companies, brand mentions, and executive announcements across global feeds.</Notes>
+    </Task>
+    <Task>
+      <UID>40</UID>
+      <ID>40</ID>
+      <Name>[P6-04] AI Research Assistant & Interactive Q&A</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Interactive AI chatbot enabling users to ask questions, extract key takeaways, and synthesize trends across saved article collections.</Notes>
+    </Task>
+    <Task>
+      <UID>41</UID>
+      <ID>41</ID>
+      <Name>Phase 7: Multi-Tenant Enterprise, Workspaces & APIs</Name>
+      <Type>1</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <PercentComplete>0</PercentComplete>
+      <Summary>1</Summary>
+    </Task>
+    <Task>
+      <UID>42</UID>
+      <ID>42</ID>
+      <Name>[P7-01] Multi-Tenant Team Workspaces Architecture</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Implement multi-tenant workspace partitioning in Cloudflare D1 with workspace switcher, shared feed collections, and team member management.</Notes>
+    </Task>
+    <Task>
+      <UID>43</UID>
+      <ID>43</ID>
+      <Name>[P7-02] Role-Based Access Control (Admin/Editor/Viewer)</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Granular permissions granting Admins billing/member management, Editors feed/rule curation, and Viewers read-only dashboard access.</Notes>
+    </Task>
+    <Task>
+      <UID>44</UID>
+      <ID>44</ID>
+      <Name>[P7-03] Enterprise SSO (SAML / OIDC) & Audit Logs</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Single Sign-On integration via Cloudflare Access / Okta / Azure AD with comprehensive compliance audit logging for team actions.</Notes>
+    </Task>
+    <Task>
+      <UID>45</UID>
+      <ID>45</ID>
+      <Name>[P7-04] Developer Public REST API & API Key Management</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT36H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>400</Priority>
+      <Summary>0</Summary>
+      <Notes>Expose secure REST API with API key token generation, rate limiting, and OpenAPI/Swagger interactive documentation.</Notes>
+    </Task>
+    <Task>
+      <UID>46</UID>
+      <ID>46</ID>
+      <Name>[P7-05] Embeddable Widget Studio & Live Visual Publishing Modes</Name>
+      <Type>0</Type>
+      <IsNull>0</IsNull>
+      <CreateDate>2026-09-18T08:00:00</CreateDate>
+      <Duration>PT48H0M0S</Duration>
+      <DurationFormat>7</DurationFormat>
+      <PercentComplete>0</PercentComplete>
+      <Priority>600</Priority>
+      <Summary>0</Summary>
+      <Notes>Visual widget builder offering 6 layout modes (News Wall, Breaking News Ticker, Carousel Slider, Magazine Grid, Imageboard, Classic List) and responsive iframe embed snippet generation.</Notes>
+    </Task>
+  </Tasks>
+</Project>
