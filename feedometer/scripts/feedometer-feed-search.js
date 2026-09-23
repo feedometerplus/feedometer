@@ -154,13 +154,6 @@
     return String(Math.round(n));
   }
 
-  function formatArticleCount(num) {
-    const n = Number(num);
-    if (!Number.isFinite(n) || n < 0) return '0';
-    if (n >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M';
-    if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'K';
-    return String(Math.round(n));
-  }
 
   function formatRelative(timestamp) {
     if (!timestamp) return 'recently';
@@ -365,7 +358,6 @@
           '</div>' +
           '<p class="feed-description">' + escapeHtml(desc) + '</p>' +
           '<div class="feed-metrics-list">' +
-            '<div class="feed-metric-item"><span>•</span><span><strong>' + formatArticleCount(feed.article_count != null ? feed.article_count : feed.items_count) + '</strong> Articles</span></div>' +
             '<div class="feed-metric-item"><span>•</span><span><strong>' + formatNumber(feed.subscribers) + '</strong> Subscribers</span></div>' +
             '<div class="feed-metric-item"><span>•</span><span><strong>' + escapeHtml(String(velocity)) + '</strong></span></div>' +
             '<div class="feed-metric-item"><span>•</span><span>Updated ' + escapeHtml(formatRelative(feed.last_updated)) + '</span></div>' +

@@ -55,9 +55,9 @@
   --btn-padding-sm: 0.35rem 0.75rem;
   --btn-padding-md: 0.55rem 1.15rem;
   --btn-padding-lg: 0.75rem 1.50rem;
-  --btn-height-sm: 32px;
-  --btn-height-md: 40px;
-  --btn-height-lg: 48px;
+  --btn-height-sm: 26px;
+  --btn-height-md: 32px;
+  --btn-height-lg: 39px;
   
   --btn-primary-bg: #141414;
   --btn-primary-text: #ffffff;
@@ -110,7 +110,7 @@
   --badge-warning-border: #fde68a;
 
   /* ── 5. Master Form Controls Schema ── */
-  --input-height: 42px;
+  --input-height: 34px;
   --input-radius: 8px;
   --input-border: #d1d5db;
   --input-focus-border: #141414;
@@ -145,6 +145,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* ── Global Scale: 19% size reduction ── */
+html {
+  font-size: 81%;
 }
 
 /* ── Standardized Typography Hierarchy ── */

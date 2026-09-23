@@ -263,9 +263,28 @@ export default {
         const country = url.searchParams.get('country') || 'all';
         const sort = url.searchParams.get('sort') || 'relevance';
         const limit = Math.min(100, Math.max(1, parseInt(url.searchParams.get('limit') || '50', 10)));
+
+        // ── KV Cache: serve search results from edge, 10-minute TTL ──
+        const kvKey = `feedsearch:${q.toLowerCase().trim()}:${category}:${language}:${country}:${sort}:${limit}`;
+        if (env.FEEDS_KV) {
+          try {
+            const kvHit = await env.FEEDS_KV.get(kvKey, 'json');
+            if (kvHit) return jsonResponse(Object.assign({}, kvHit, { cached: true }));
+          } catch (_) {}
+        }
+
         const result = await findFeedsUnified({ query: q, category, language, country, sort, limit, env });
+
+        // Store result in KV for 10 minutes
+        if (env.FEEDS_KV && result && result.feeds && result.feeds.length > 0) {
+          try {
+            await env.FEEDS_KV.put(kvKey, JSON.stringify(result), { expirationTtl: 600 });
+          } catch (_) {}
+        }
+
         return jsonResponse(result);
       }
+
       if (pathname === '/api/search' && request.method === 'GET') {
         return await handleSearch(request, url, env);
       }
